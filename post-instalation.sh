@@ -29,7 +29,7 @@ sudo apt install baobab lutris sqlite pip vlc git github-desktop libgl1-mesa-dri
 sudo apt install --install-recommends winehq-devel -y
 
 # Python modules
-pip3 install numpy pandas tensorflow scikit-learn matplotlib
+pip3 install numpy pandas tensorflow scikit-learn matplotlib tk
 
 sudo apt autoremove
 sudo apt autoclean
