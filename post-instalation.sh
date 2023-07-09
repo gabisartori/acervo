@@ -25,11 +25,11 @@ curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash - &
 sudo apt update && sudo apt upgrade -y
 
 # Apt packages
-sudo apt install baobab lutris sqlite pip vlc git github-desktop libgl1-mesa-dri:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 nodejs krita gimp htop neofetch net-tools ssh -y
+sudo apt install baobab lutris sqlite pip vlc git github-desktop libgl1-mesa-dri:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 nodejs krita gimp htop neofetch net-tools ssh python3-tk -y
 sudo apt install --install-recommends winehq-devel -y
 
 # Python modules
-pip3 install numpy pandas tensorflow scikit-learn matplotlib tk
+pip3 install numpy pandas tensorflow scikit-learn matplotlib
 
 sudo apt autoremove
 sudo apt autoclean
