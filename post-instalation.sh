@@ -17,9 +17,10 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-package
 # Adding video drivers repositories
 sudo add-apt-repository ppa:kisak/kisak-mesa
 
-# Getting something for nodejs
-NODE_VERSION="18" # LTS
-curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash - &&\
+# Install NVM and Node.js at LTS version
+NODE_VERSION="20" # LTS
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install $NODE_VERSION
 
 # Installing everything
 sudo apt update && sudo apt upgrade -y
