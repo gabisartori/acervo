@@ -2,6 +2,11 @@
 
 # This script was made for a fresh installed ubuntu 22.04 jammy jellyfish
 
+# Versions
+NODE_VERSION="20" # LTS
+RUBY_VERSION="3.3.0"
+
+
 # Enable 32-bit architecture
 sudo dpkg --add-architecture i386 
 
@@ -17,16 +22,14 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 # Adding video drivers repositories
 sudo add-apt-repository ppa:kisak/kisak-mesa
 
-# Install NVM and Node.js at LTS version
-NODE_VERSION="20" # LTS
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-nvm install $NODE_VERSION
-
 # Installing everything
 sudo apt update && sudo apt upgrade -y
 
 # Apt packages
-sudo apt install baobab lutris sqlite pip vlc git libgl1-mesa-dri:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 krita gimp htop neofetch net-tools ssh python3-tk -y
+## Libs
+sudo apt install libgl1-mesa-dri:i386 libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-devruby
+# Programs
+sudo apt install autoconf baobab build-essential ca-certificates curl gimp git htop krita  lutris mesa-vulkan-drivers mesa-vulkan-drivers:i386 neofetch net-tools pip python3-tk sqlite ssh vlc -y
 sudo apt install --install-recommends winehq-devel -y
 
 # Deb packages
@@ -56,10 +59,37 @@ tar -xvf /tmp/libreoffice_helppack_pt_br_deb.tar.gz -C /tmp/libreoffice_deb
 
 sudo dpkg --recursive -i /tmp/libreoffice_deb
 
-# Python modules
+# Programming
+
+## Python modules
 pip3 install numpy pandas tensorflow scikit-learn matplotlib
 
 sudo apt autoremove
 sudo apt autoclean
 
+## Ruby
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
 
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
+
+gem install rails
+
+## NVM and Node.js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install $NODE_VERSION
+
+## Docker
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
