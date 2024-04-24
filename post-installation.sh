@@ -27,7 +27,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Apt packages
 ## Libs
-sudo apt install libgl1-mesa-dri:i386 libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-devruby
+sudo apt install libgl1-mesa-dri:i386 libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 # Programs
 sudo apt install autoconf baobab build-essential ca-certificates curl gimp git htop krita  lutris mesa-vulkan-drivers mesa-vulkan-drivers:i386 neofetch net-tools pip python3-tk sqlite ssh vlc -y
 sudo apt install --install-recommends winehq-devel -y
@@ -58,7 +58,16 @@ curl -s -L --output /tmp/libreoffice_helppack_pt_br_deb.tar.gz "https://download
 tar -xvf /tmp/libreoffice_helppack_pt_br_deb.tar.gz -C /tmp/libreoffice_deb
 
 sudo dpkg --recursive -i /tmp/libreoffice_deb
-
+## Firefox
+sudo snap remove firefox
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+echo '
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+' | sudo tee /etc/apt/preferences.d/mozilla
+sudo apt update && sudo apt install firefox
 # Programming
 
 ## Python modules
