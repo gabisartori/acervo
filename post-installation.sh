@@ -6,6 +6,9 @@
 NODE_VERSION="20" # LTS
 RUBY_VERSION="3.3.0"
 
+# Remove the ubuntu pro add from apt upgrade
+sudo mv /etc/apt/apt.conf.d/20apt-esm-hook.conf /etc/apt/apt.conf.d/20apt-esm-hook.conf.bak
+sudo touch /etc/apt/apt.conf.d/20apt-esm-hook.conf
 
 # Enable 32-bit architecture
 sudo dpkg --add-architecture i386 
