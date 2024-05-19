@@ -2,7 +2,21 @@
 
 # This script was made for a fresh installed ubuntu 22.04 jammy jellyfish
 
-# Versions
+# Functions
+function install_deb() {
+  curl -s -L --output /tmp/$1.deb $2
+  sudo dpkg -i /tmp/$1.deb
+  echo "Installed $1"
+}
+
+# Variables
+## List files
+APT_LIST="./install/apt.txt"
+APT_REPOS_LIST="./install/apt-repos.txt"
+DEB_LIST="./install/deb.txt"
+PIP_LIST="./install/pip.txt"
+
+## Versions
 NODE_VERSION="20" # LTS
 RUBY_VERSION="3.3.0"
 
@@ -13,8 +27,10 @@ sudo touch /etc/apt/apt.conf.d/20apt-esm-hook.conf
 # Enable 32-bit architecture
 sudo dpkg --add-architecture i386 
 
-# Download wine repository key
+# Create folder for repository keys 
 sudo mkdir -pm755 /etc/apt/keyrings
+
+# Download Wine repository key
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 
@@ -22,32 +38,38 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 # wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
 # sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
 
-# Adding video drivers repositories
-sudo add-apt-repository ppa:kisak/kisak-mesa
+# Adding repositories
+if [[-f "$APT_REPOS_LIST"]]; then
+  grep -vE '^\s*($|#)' $APT_REPOS_LIST | while IFS= read -r line; do
+    sudo add-apt-repository "$line"
+  done
+else
+  echo "No repositories to add"
+fi
 
 # Installing everything
 sudo apt update && sudo apt upgrade -y
 
 # Apt packages
-## Libs
-sudo apt install libgl1-mesa-dri:i386 libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
-# Programs
-sudo apt install autoconf baobab build-essential ca-certificates curl gimp git htop krita  lutris mesa-vulkan-drivers mesa-vulkan-drivers:i386 neofetch net-tools pip python3-tk sqlite ssh vlc -y
+if [[-f "$APT_LIST"]]; then
+  grep -vE '^\s*($|#)' $APT_LIST | xargs sudo apt install -y
+else
+  echo "No apt packages to install"
+fi
+
+## Wine because of course it was gonna be different
 sudo apt install --install-recommends winehq-devel -y
 
 # Deb packages
-## Discord
-curl -s -L --output /tmp/discord.deb "https://discord.com/api/download?platform=linux&format=deb"
-sudo dpkg -i /tmp/discord.deb
-## Minecraft
-curl -s -L --output /tmp/minecraft.deb "https://launcher.mojang.com/download/Minecraft.deb"
-sudo dpkg -i /tmp/minecraft.deb
-## Steam
-curl -s -L --output /tmp/steam.deb "https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb"
-sudo dpkg -i /tmp/steam.deb
-## Visual Studio Code
-curl -s -L --output /tmp/vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-sudo dpkg -i /tmp/vscode.deb
+if [[-f "$DEB_LIST"]]; then
+  grep -vE '^\s*($|#)' $DEB_LIST | while IFS= read -r line; do
+    read -r filepath url <<< "$line"
+    install_deb $filepath $url
+  done
+else
+  echo "No deb packages to install"
+fi
+
 ## Libre Office
 mkdir /tmp/libreoffice_deb
 ### Libre Office
@@ -71,13 +93,14 @@ Pin: origin packages.mozilla.org
 Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla
 sudo apt update && sudo apt install firefox
+
 # Programming
-
 ## Python modules
-pip3 install numpy pandas tensorflow scikit-learn matplotlib
-
-sudo apt autoremove
-sudo apt autoclean
+if [[-f "$PIP_LIST"]]; then
+  grep -vE '^\s*($|#)' $PIP_LIST | xargs pip3 install 
+else
+  echo "No pip packages to install"
+fi
 
 ## Ruby
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
@@ -105,3 +128,6 @@ echo \
 sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo apt autoremove -y
+sudo apt autoclean -y

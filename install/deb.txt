@@ -1,0 +1,4 @@
+discord https://discord.com/api/download?platform=linux&format=deb
+minecraft https://launcher.mojang.com/download/Minecraft.deb
+steam https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
