@@ -29,3 +29,6 @@ python3-tk
 sqlite
 ssh
 vlc
+ffmpeg
+alacritty
+simplescreenrecorder
