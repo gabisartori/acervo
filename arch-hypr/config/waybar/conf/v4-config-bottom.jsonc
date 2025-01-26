@@ -16,7 +16,7 @@
     "modules-right": ["custom/weather"],
 
     "include": [
-        "~/.config/HyprV/waybar/conf/mesu.jsonc"
+        "~/.config/waybar/conf/mesu.jsonc"
     ],
 
     "custom/launch_firefox": {

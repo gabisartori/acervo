@@ -16,7 +16,7 @@
         "custom/updates"
     ],
     "modules-right": [
-	"cpu",
+	    "cpu",
         "pulseaudio",
         "pulseaudio#microphone",
         "backlight",
