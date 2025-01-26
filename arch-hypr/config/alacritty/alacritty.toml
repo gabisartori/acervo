@@ -1,0 +1,26 @@
+[general]
+import = ["./dracula.toml"]
+
+[font]
+size = 15.0
+
+[font.normal]
+family = "jetbrains mono nerd font"
+style = "Regular"
+
+[font.bold]
+family = "jetbrains mono nerd font"
+style = "Bold"
+
+[font.italic]
+family = "jetbrains mono nerd font"
+style = "Italic"
+
+[font.bold_italic]
+family = "jetbrains mono nerd font"
+style = "Bold Italic"
+
+[window]
+opacity = 0.1
+blur = false
+
