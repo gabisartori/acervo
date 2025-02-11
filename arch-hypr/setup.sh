@@ -11,4 +11,4 @@ yay -S --needed - < packages.list
 
 
 # Config files
-ln -s config/* ~/.config/
+ln -sf "$(pwd)"/config/* ~/.config/
