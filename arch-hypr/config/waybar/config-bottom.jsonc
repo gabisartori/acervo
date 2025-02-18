@@ -14,47 +14,37 @@
     ],
     "modules-center": ["wlr/taskbar"],
     "modules-right": ["custom/weather"],
-
-    "include": [
-        "~/.config/waybar/conf/mesu.jsonc"
-    ],
-
+    "include": ["~/.config/waybar/conf/mesu.jsonc"],
     "custom/launch_firefox": {
         "format": "",
         "on-click": "firefox",
         "tooltip": false
     },
-
     "custom/launch_brave": {
-	"format": "",
-	"on-click": "brave",
-	"tooltip": false
+        "format": "",
+        "on-click": "brave",
+        "tooltip": false
     },
-
     "custom/launch_thunderbird": {
         "format": "󰇰",
         "on-click": "thunderbird",
         "tooltip": false
     },
-
     "custom/launch_thunar": {
         "format": "",
         "on-click": "exec thunar",
         "tooltip": false
     },
-
     "custom/launch_kitty": {
         "format": "",
         "on-click": "exec kitty",
         "tooltip": false
     },
-    
     "custom/launch_wofi": {
         "format": "󱗼",
         "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/HyprV/wofi/config-lmenu)' & disown",
         "tooltip": false
     },
-
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 24,
@@ -65,8 +55,8 @@
         "ignore-list": [
             "wofi"
         ],
-	    "app_ids-mapping": {
-	        "steam_app_39210": "Final Fantasy 14"
-	    }
+        "app_ids-mapping": {
+            "steam_app_39210": "Final Fantasy 14"
+        }
     }
 }
