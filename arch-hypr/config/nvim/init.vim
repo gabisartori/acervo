@@ -10,4 +10,6 @@ syntax on
 set number
 " Highlight the current line the cursor is on
 set cursorline
+" Set clipboard to be the same as the system instead of its own
+set clipboard=unnamedplus
 
