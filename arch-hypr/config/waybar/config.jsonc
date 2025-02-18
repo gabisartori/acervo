@@ -156,7 +156,12 @@
     },
     "custom/amberol": {
         "format": "{} ♪",
-        "exec": "playerctl -p io.bassi.Amberol metadata --format '{{ artist }} - {{ title }}'",
+	// playerctl returns the artist and name of the song playing.
+	// sed cleans the returned string so waybar json parser doesn't break
+	// Current song player: Amberol (io.bassi.Amberol)
+	// Problematic chars known so far and their replacements
+	// & - &amp;
+        "exec": "playerctl -p io.bassi.Amberol metadata --format '{{ artist }} - {{ title }}' | sed 's/&/\\&amp;/g'",
         // TODO: make "exec-on-event" work
         "interval": 1,
         "on-click": "playerctl -p io.bassi.Amberol play-pause",
