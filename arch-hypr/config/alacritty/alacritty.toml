@@ -24,3 +24,7 @@ style = "Bold Italic"
 opacity = 0.1
 blur = false
 
+[keyboard]
+bindings = [
+    { key = "Return", mods = "Control", action = "SpawnNewInstance" }
+]
