@@ -26,9 +26,6 @@
         "hyprland/language",
         "custom/light_dark"
     ],
-    "include": [
-        "~/.config/waybar/conf/mesu.jsonc"
-    ],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -102,6 +99,15 @@
         "max-length": 10,
         "format-alt-click": "click-right",
         "format-alt": " ",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+    "temperature": {
+        "thermal-zone": 1,
+        "format": " {temperatureC}°C",
+        "format-alt-click": "click-right",
+        "format-alt": "",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
     "pulseaudio": {

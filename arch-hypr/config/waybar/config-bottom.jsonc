@@ -14,7 +14,6 @@
     ],
     "modules-center": ["wlr/taskbar"],
     "modules-right": ["custom/weather"],
-    "include": ["~/.config/waybar/conf/mesu.jsonc"],
     "custom/launch_firefox": {
         "format": "",
         "on-click": "firefox",
@@ -58,5 +57,13 @@
         "app_ids-mapping": {
             "steam_app_39210": "Final Fantasy 14"
         }
+    },
+    "custom/weather": {
+        //shows the current weather and forecast
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr-c.py",
+        "return-type": "json"
     }
 }
