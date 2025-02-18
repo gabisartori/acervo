@@ -13,6 +13,7 @@
     ],
     "modules-center": [
         "clock",
+	"custom/amberol",
         "custom/updates"
     ],
     "modules-right": [
@@ -159,6 +160,19 @@
         "on-click": "~/.config/waybar/scripts/update-sys update",
         "interval": 300,
         "tooltip": true
+    },
+
+    "custom/amberol": {
+	"format": "{} ♪",
+	"exec": "playerctl -p io.bassi.Amberol metadata --format '{{ artist }} - {{ title }}'",
+	// TODO: make "exec-on-event" work
+	"interval": 1,
+	"on-click": "playerctl -p io.bassi.Amberol play-pause",
+	"on-click-right": "playerctl -p io.bassi.Amberol next",
+	"on-click-middle": "playerctl -p io.bassi.Amberol previous",
+	// Volume control isn't working
+	"on-scroll-up": "",
+	"on-scroll-down": ""
     },
 
     // This one does nothing for now
