@@ -165,8 +165,8 @@
         // TODO: make "exec-on-event" work
         "interval": 1,
         "on-click": "playerctl -p io.bassi.Amberol play-pause",
-        "on-click-right": "playerctl -p io.bassi.Amberol next",
-        "on-click-middle": "playerctl -p io.bassi.Amberol previous",
+        "on-click-right": "playerctl -p io.bassi.Amberol next && playerctl -p io.bassi.Amberol play",
+        "on-click-middle": "playerctl -p io.bassi.Amberol previous && playerctl -p io.bassi.Amberol play",
         // Volume control isn't working
         "on-scroll-up": "",
         "on-scroll-down": ""
