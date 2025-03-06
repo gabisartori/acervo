@@ -21,7 +21,7 @@ family = "jetbrains mono nerd font"
 style = "Bold Italic"
 
 [window]
-opacity = 0.1
+opacity = 0.8
 blur = false
 
 [keyboard]
