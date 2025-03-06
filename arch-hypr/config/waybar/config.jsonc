@@ -35,11 +35,9 @@
         "tooltip": true
     },
     "hyprland/language": {
-        "interval": 30,
         "format": " {}",
-        "keyboard-name": "logitech-pro-gaming-keyboard",
-        "on-click": "~/.config/hyprv_util swkb",
-        "signal": 8
+        "keyboard-name": "sino-wealth-gaming-kb-",
+        "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
     },
     "custom/power_btn": {
         "format": "",
@@ -107,8 +105,7 @@
         "format-alt-click": "click-right",
         "format-alt": "",
         "critical-threshold": 70,
-        "format-critical": " {temperatureC}°C",
-        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+        "format-critical": " {temperatureC}°C"
     },
     "pulseaudio": {
         "format": "{icon}",
