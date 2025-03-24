@@ -20,17 +20,14 @@ image/webp=org.gnome.Loupe.desktop
 image/gif=mpv.desktop
 video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
-audio/mpeg=io.bassi.Amberol.desktop
 
 [Added Associations]
 font/otf=brave-browser.desktop;
 image/svg+xml=gimp.desktop;org.inkscape.Inkscape.desktop;swappy.desktop;mupdf.desktop;
 image/png=swappy.desktop;org.gnome.Loupe.desktop;org.kde.gwenview.desktop;ida.desktop;gimp.desktop;
-inode/directory=vlc.desktop;io.bassi.Amberol.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;org.gnome.Evince.desktop;
 application/pdf=org.gnome.Evince.desktop;libreoffice-impress.desktop;
 text/plain=nvim.desktop;code.desktop;
-audio/mpeg=io.bassi.Amberol.desktop;vlc.desktop;
 text/html=code.desktop;brave-browser.desktop;
 application/xml=code.desktop;brave-browser.desktop;
 application/zip=org.gnome.FileRoller.desktop;code.desktop;
