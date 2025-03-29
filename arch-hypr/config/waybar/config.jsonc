@@ -164,7 +164,6 @@
         "on-click": "playerctl -p kew play-pause",
         "on-click-right": "playerctl -p kew next && playerctl -p kew play",
         "on-click-middle": "playerctl -p kew previous && playerctl -p kew play",
-        // Volume control isn't working
         "on-scroll-up": "playerctl -p kew volume 0.1+",
         "on-scroll-down": "playerctl -p kew volume 0.1-"
     },
