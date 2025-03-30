@@ -162,10 +162,15 @@
         // TODO: make "exec-on-event" work
         "interval": 1,
         "on-click": "playerctl -p kew play-pause",
-        "on-click-right": "playerctl -p kew next && playerctl -p kew play",
-        "on-click-middle": "playerctl -p kew previous && playerctl -p kew play",
+        "on-click-right": "playerctl -p kew next && playerctl -p kew play; pkill -SIGRTMIN+10 waybar",
+        "on-click-middle": "playerctl -p kew previous && playerctl -p kew play; pkill -SIGRTMIN+10 waybar",
         "on-scroll-up": "playerctl -p kew volume 0.1+",
-        "on-scroll-down": "playerctl -p kew volume 0.1-"
+        "on-scroll-down": "playerctl -p kew volume 0.1-",
+        // Logic for exec-on-event that waits for event to end before exec
+        // Since "exec-on-event" runs immediatly once the event happens, it usually runs before the event is finished.
+        // So instead I disable it and have every event signal the module to update it
+        "exec-on-event": false,
+        "signal": 10
     },
     // This one does nothing for now
     "custom/light_dark": {
