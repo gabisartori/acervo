@@ -26,5 +26,6 @@ blur = false
 
 [keyboard]
 bindings = [
-    { key = "Return", mods = "Control", action = "SpawnNewInstance" }
+    { key = "Return", mods = "Control", action = "SpawnNewInstance" },
+    { key = "Return", mods = "Alt", command = "thunar" } 
 ]
