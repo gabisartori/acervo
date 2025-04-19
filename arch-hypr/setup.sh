@@ -11,6 +11,7 @@ yay -S --needed - < packages.list
 
 # Config files
 ln -sf "$(pwd)"/config/* ~/.config/
+ln -sf "$(pwd)"/scripts/bash_aliases ~/.bash_aliases
 
 # Setup man-pages
 mandb
