@@ -1,7 +1,19 @@
 {
-    "label" : "lock",
-    "action" : "swaylock",
-    "text" : "Lock"
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot"
+}
+
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "Suspend"
 }
 
 {
@@ -17,19 +29,8 @@
 }
 
 {
-    "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "text" : "Shutdown"
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "Lock"
 }
 
-{
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend"
-}
-
-{
-    "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot"
-}
