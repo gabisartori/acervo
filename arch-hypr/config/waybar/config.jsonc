@@ -148,6 +148,7 @@
         "format": "{}",
         "exec": "~/.config/waybar/scripts/update-sys",
         "on-click": "~/.config/waybar/scripts/update-sys update",
+        "on-click-right": "", // This makes it so that right click is recognized as an event and triggers the module update
         "interval": "once",
         "tooltip": true
     },
