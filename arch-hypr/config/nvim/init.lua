@@ -12,6 +12,10 @@ vim.opt.syntax = "on"
 vim.opt.number = true
 -- Highlight the current line the cursor is on
 vim.opt.cursorline = true
+-- Relative lines
+vim.opt.relativenumber = true
+-- Avoid linebreak in the middle of words
+vim.opt.linebreak = true
 -- Set clipboard to be the same as the system instead of its own
 vim.opt.clipboard = "unnamedplus"
 
