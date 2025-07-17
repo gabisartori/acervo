@@ -1,0 +1,10 @@
+# Rust
+. "$HOME/.cargo/env"
+
+# Ruby
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Haskell
+[ -f "/home/sartori/.ghcup/env" ] && . "/home/sartori/.ghcup/env" # ghcup-env
+

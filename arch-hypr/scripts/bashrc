@@ -1,0 +1,37 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+
+# Load starship
+eval "$(starship init bash)"
+
+# Aliases
+if [ -f $HOME/.bash_aliases ]; then
+	. $HOME/.bash_aliases
+fi
+
+# Autocomplete
+if [ -f $HOME/.bash_autocomplete ]; then
+    . $HOME/.bash_autocomplete
+fi
+
+
+# Programming languages environments
+if [ -f $HOME/.bash_venv ]; then
+    . $HOME/.bash_venv
+fi
+
+# Ibus
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODLUE='fcitx'
+export XMODIFIERS='@im=fcitx'
+
+# Function for changing directory and listing the target content
+cs() { cd "$@" && ls; }
+
