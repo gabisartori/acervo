@@ -3,7 +3,7 @@
 -- This is because I don't want to use tabs, so they should stick out
 -- vim.opt.tabstop = 8
 -- Automatic identation for when breaking lines;
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 -- Indent using spaces instead of tabs
 vim.opt.expandtab = true
 -- Syntax highlighting
