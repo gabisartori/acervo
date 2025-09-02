@@ -32,6 +32,3 @@ export QT_IM_MODULE='fcitx'
 export SDL_IM_MODLUE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-# Function for changing directory and listing the target content
-cs() { cd "$@" && ls; }
-
