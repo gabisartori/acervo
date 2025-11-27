@@ -23,7 +23,8 @@
         "tray",
         "temperature",
         "custom/power_profile",
-        // "hyprland/language",
+        "upower",
+        "hyprland/language",
         "custom/light_dark"
     ],
     "idle_inhibitor": {
@@ -143,6 +144,10 @@
     "tray": {
         "icon-size": 16,
         "spacing": 10
+    },
+    "upower": {
+        "format": "{percentage} ",
+        "tooltip-format": "{time}"
     },
     "custom/updates": {
         "format": "{}",

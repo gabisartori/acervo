@@ -2,7 +2,6 @@ alacritty
 base
 base-devel
 bash-completion
-baobab
 blueman
 bluez
 bluez-utils
@@ -14,14 +13,12 @@ discord-canary
 ffmpeg
 ffmpegthumbnailer
 file-roller
-gimp
 git
 grim
 gvfs
 helvum
 hyprland
 hyprutils
-inkscape
 kew
 kwallet
 kwallet-pam
@@ -29,7 +26,6 @@ lxappearance
 mako
 man-db
 mpv
-multimc-bin
 neofetch
 neovim
 network-manager-applet
@@ -39,7 +35,6 @@ nvidia-dkms
 nvidia-settings
 nvidia-utils
 nwg-look-bin
-obsidian
 openssh
 pamixer
 papirus-icon-theme
@@ -51,18 +46,15 @@ pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-pulse
-postgresql
 qbittorrent
 sddm
 slurp
 starship
 steam
-sudo
 swappy
 swaylock-effects
 swww
 tar
-tectonic
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
