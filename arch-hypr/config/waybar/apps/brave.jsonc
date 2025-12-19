@@ -1,0 +1,7 @@
+{
+  "custom/launch_brave": {
+  "format": "",
+  "on-click": "brave",
+  "tooltip": false
+  }
+}

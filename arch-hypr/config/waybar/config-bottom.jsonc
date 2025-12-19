@@ -14,14 +14,14 @@
     ],
     "modules-center": ["wlr/taskbar"],
     "modules-right": ["custom/weather"],
+    "custom/launch_brave": {
+    "format": "",
+    "on-click": "brave",
+    "tooltip": false
+    },
     "custom/launch_firefox": {
         "format": "",
         "on-click": "firefox",
-        "tooltip": false
-    },
-    "custom/launch_brave": {
-        "format": "",
-        "on-click": "brave",
         "tooltip": false
     },
     "custom/launch_thunderbird": {

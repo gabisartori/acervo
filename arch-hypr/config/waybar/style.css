@@ -66,26 +66,12 @@ tooltip label{
 #workspaces,
 #idle_inhibitor,
 #backlight {
-    background: rgba(21, 18, 27, 0);
-    opacity: 1;
     padding: 0px 8px;
     margin: 0px 3px;
-    border: 0px;
 }
 
 #temperature.critical {
     color: #e92d4d;
-}
-
-#workspaces {
-    padding-right: 0px;
-    padding-left: 5px;
-}
-
-#window {
-    border-radius: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
 }
 
 #custom-launch_firefox,
@@ -106,3 +92,4 @@ tooltip label{
 #custom-launch_kitty {
     font-size: 20px;
 }
+

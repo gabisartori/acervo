@@ -18,22 +18,15 @@
     ],
     "modules-right": [
         "cpu",
+        "temperature",
+        "custom/gpu",
+        "custom/gpu-temperature",
         "pulseaudio",
         "pulseaudio#microphone",
         "tray",
-        "temperature",
-        "custom/power_profile",
-        // "hyprland/language",
+        "hyprland/language",
         "custom/light_dark"
     ],
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰛐",
-            "deactivated": "󰛑"
-        },
-        "tooltip": true
-    },
     "hyprland/language": {
         "format": " {}",
         "keyboard-name": "sino-wealth-gaming-kb-",
@@ -41,7 +34,7 @@
     },
     "custom/power_btn": {
         "format": "",
-        "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+        "on-click": "sh -c '(wlogout --protocol layer-shell)' & disown",
         "tooltip": false
     },
     "custom/lock_screen": {
@@ -58,7 +51,7 @@
             "mode": "month",
             "mode-mon-col": 4,
             "weeks-pos": "left",
-            "on-scroll": 1,
+            "on-scroll": -1,
             "on-click-right": "mode",
             "format": {
                 "months": "<span color='#ffead3'><b>{}</b></span>",
@@ -97,15 +90,25 @@
         "max-length": 10,
         "format-alt-click": "click-right",
         "format-alt": " ",
-        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+        "on-click": "alacritty -e 'btop'"
+    },
+    "custom/gpu": {
+      "interval": 10,
+      "format": "💻{}%",
+      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
+    },
+    "custom/gpu-temperature": {
+      "intervarl": 10,
+      "format": "{}°C",
+      "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits"
     },
     "temperature": {
-        "thermal-zone": 1,
-        "format": " {temperatureC}°C",
-        "format-alt-click": "click-right",
-        "format-alt": "",
-        "critical-threshold": 70,
-        "format-critical": " {temperatureC}°C"
+      "thermal-zone": 1,
+      "format": "{temperatureC}°C",
+      "format-alt-click": "click-right",
+      "format-alt": "",
+      "critical-threshold": 70,
+      "format-critical": " {temperatureC}°C"
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -148,7 +151,7 @@
         "format": "{}",
         "exec": "~/.config/waybar/scripts/update-sys",
         "on-click": "~/.config/waybar/scripts/update-sys update",
-        "on-click-right": "", // This makes it so that right click is recognized as an event and triggers the module update
+        "on-click-right": "", // This makes it so that right click is recognized as an event and triggers the module update. Essentially working as a refresh.
         "interval": "once",
         "tooltip": true
     },
@@ -170,7 +173,7 @@
         // Logic for exec-on-event that waits for event to end before exec
         // Since "exec-on-event" runs immediatly once the event happens, it usually runs before the event is finished.
         // So instead I disable it and have every event signal the module to update it
-        "exec-on-event": false,
+        "exec-on-event": true,
         "signal": 10
     },
     // This one does nothing for now
