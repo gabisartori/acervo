@@ -23,5 +23,6 @@ alias pass="EDITOR=nvim pass"
 
 # Function for changing directory and listing the target content
 # Not sure why this couldn't just be an alias
+cdd() { cd "$@"; }
 cs() { builtin cd "$@" && ls; }
 alias cd=cs
