@@ -32,3 +32,4 @@ export QT_IM_MODULE='fcitx'
 export SDL_IM_MODLUE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
+export EDITOR='nvim'
