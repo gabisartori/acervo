@@ -1,0 +1,175 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 20,
+    "modules-left": [
+        "custom/power_btn",
+        "custom/lock_screen",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/song_player",
+        "custom/updates"
+    ],
+    "modules-right": [
+        "cpu",
+        "temperature",
+        "custom/gpu",
+        "custom/gpu-temperature",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "tray",
+        "hyprland/language",
+        "custom/light_dark"
+    ],
+    "hyprland/language": {
+        "format": " {}",
+        "keyboard-name": "sino-wealth-gaming-kb-",
+        "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
+    },
+    "custom/power_btn": {
+        "format": "",
+        "on-click": "sh -c '(wlogout --protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+    "custom/lock_screen": {
+        "format": "",
+        "on-click": "sh -c '(swaylock)' & disown",
+        "tooltip": false
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%d/%m %H:%M}",
+        "tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 4,
+            "weeks-pos": "left",
+            "on-scroll": -1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}% ",
+        "max-length": 10,
+        "format-alt-click": "click-right",
+        "format-alt": " ",
+        "on-click": "alacritty -e 'btop'"
+    },
+    "custom/gpu": {
+      "interval": 10,
+      "format": "💻{}% ",
+      "format-alt-click": "click-right",
+      "format-alt": "💻",
+      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
+    },
+    "custom/gpu-temperature": {
+      "intervarl": 10,
+      "format": "{}°C",
+      "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits"
+    },
+    "temperature": {
+      "thermal-zone": 1,
+      "format": "{temperatureC}°C",
+      "critical-threshold": 70,
+      "format-critical": " {temperatureC}°C"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-click-middle": "~/.config/waybar/scripts/switchcardprofile",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "tooltip": true,
+        "tooltip-format": "{icon}  at {volume}%"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5,
+        "tooltip": true,
+        "tooltip-format": " at {volume}%"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+    "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/update-sys",
+        "on-click": "~/.config/waybar/scripts/update-sys update",
+        "on-click-right": "",
+        "interval": "once",
+        "tooltip": true
+    },
+    "custom/song_player": {
+        "format": "{} ♪",
+        "exec": "playerctl -p kew metadata --format '{{ artist }} - {{ title }}' | sed 's/&/\\&amp;/g'",
+        "interval": 1,
+        "on-click": "playerctl -p kew play-pause",
+        "on-click-right": "playerctl -p kew next && playerctl -p kew play; pkill -SIGRTMIN+10 waybar",
+        "on-click-middle": "playerctl -p kew previous && playerctl -p kew play; pkill -SIGRTMIN+10 waybar",
+        "on-scroll-up": "playerctl -p kew volume 0.1+",
+        "on-scroll-down": "playerctl -p kew volume 0.1-",
+        "exec-on-event": true,
+        "signal": 10
+    },
+    "custom/light_dark": {
+        "format": "󰐾",
+        "on-click": "",
+        "tooltip": false
+    }
+}

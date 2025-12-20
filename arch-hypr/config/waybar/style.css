@@ -1,3 +1,4 @@
+/* General */
 * {
     border: none;
     border-radius: 0;
@@ -8,8 +9,9 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
+    background: transparent;
     color: #f6f7fc;
+    padding-top: 4px;
 }
 
 tooltip {
@@ -25,6 +27,8 @@ tooltip label{
     color: #cdd6f4;
 }
 
+/* Modules tweaks */
+
 #workspaces button {
     margin: 3px;
     padding: 3px 5px;
@@ -34,7 +38,7 @@ tooltip label{
 
 #workspaces button.active {
     color: #000000;
-    background: #cfa1e3;
+    background: #bea8ff;
 }
 
 #workspaces button:hover {
@@ -42,54 +46,90 @@ tooltip label{
     color: #cdd6f4;
 }
 
-#custom-launch_wofi,
-#custom-launch_firefox,
-#custom-launch_thunderbird,
-#custom-launch_thunar,
-#custom-launch_kitty,
-#custom-lock_screen,
-#custom-light_dark,
-#custom-power_btn,
-#custom-power_profile,
-#custom-weather,
-#custom-myhyprv,
-#window,
-#cpu,
-#disk,
-#custom-updates,
-#memory,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#temperature,
-#workspaces,
-#idle_inhibitor,
-#backlight {
-    padding: 0px 8px;
-    margin: 0px 3px;
-}
-
 #temperature.critical {
     color: #e92d4d;
 }
 
-#custom-launch_firefox,
-#custom-launch_brave,
-#custom-launch_thunderbird,
-#custom-launch_thunar,
-#custom-launch_wofi,
-#custom-launch_kitty,
-#custom-weather {
+#custom-updates {
+    padding: 0 4px;
+}
+
+#taskbar button {
+    border-radius: 8px;
+}
+
+#taskbar button:not(:last-child) {
+    margin-right: 4px;
+}
+
+#taskbar button.active, #taskbar button:hover {
+    background: rgba(135, 145, 238, 0.5);
+}
+
+/* Background hover effect */
+#language,
+#pulseaudio,
+#custom-launch_browser,
+#custom-updates,
+#custom-launch_file_manager,
+#custom-wofi,
+#custom-launch_terminal {
     margin-left: 0px;
-    border-right: 0px;
-    font-size: 24px;
-    margin-right: 20px;
+    transition: background-color 0.2s;
+    border-radius: 4px;
 }
 
-#custom-launch_firefox,
-#custom-launch_brave,
-#custom-launch_kitty {
-    font-size: 20px;
+#custom-power_btn,
+#custom-lock_screen {
+    transition: background-color 0.2s;
+    border-radius: 50%;
 }
 
+#language:hover,
+#pulseaudio:hover,
+#custom-updates:hover,
+#custom-power_btn:hover,
+#custom-lock_screen:hover,
+#custom-launch_browser:hover,
+#custom-launch_file_manager:hover,
+#custom-wofi:hover,
+#custom-launch_terminal:hover {
+    background-color: rgba(20, 20, 20, 0.5);
+}
+
+/* Element spacing */
+#clock,
+#custom-song_player,
+#temperature,
+#custom-gpu_temperature,
+#pulseaudio.microphone,
+#tray {
+    margin-right: 4px;
+}
+
+/* Precise handling of element padding since most icons' widths aren't consistent with monospaced fonts */
+
+/* Top left */
+#custom-power_btn { padding-left: 8px; padding-right: 8px; }
+#custom-lock_screen { padding-left: 8px; padding-right: 10px; }
+
+/* Top right */
+#pulseaudio { padding-left: 6px; padding-right: 10px; }
+#pulseaudio.microphone { padding-left: 6px; padding-right: 6px; }
+#pulseaudio.microphone.source-muted { padding-right: 12px; }
+#language { padding-left: 6px; padding-right: 4px; }
+
+/* Bottom left */
+#custom-wofi { padding-left: 8px; padding-right: 10px; }
+#custom-launch_terminal { padding-left: 8px; padding-right: 18px;}
+#custom-launch_browser { padding-left: 8px; padding-right: 16px;}
+#custom-launch_file_manager { padding-left: 8px; padding-right: 14px;}
+
+
+/* The following blocks give the edge elements a bit of a margin */
+
+/* Leftmost elements */
+#custom-power_btn, #custom-wofi { margin-left: 8px; }
+
+/* Rightmost elements */
+#custom-light_dark, #custom-weather { margin-right: 12px; }

@@ -1,0 +1,7 @@
+{
+  "custom/launch_browser": {
+    "format": "",
+    "on-click": "brave",
+    "tooltip": false
+  }
+}

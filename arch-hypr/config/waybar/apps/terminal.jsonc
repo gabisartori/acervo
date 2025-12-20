@@ -1,7 +1,7 @@
 {
-  "custom/launch_brave": {
-  "format": "",
-  "on-click": "brave",
-  "tooltip": false
+  "custom/launch_terminal": {
+    "format": "",
+    "on-click": "exec alacritty",
+    "tooltip": false
   }
 }

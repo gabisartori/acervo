@@ -1,0 +1,8 @@
+{
+  "modules-left": [
+    "custom/wofi",
+    "custom/launch_terminal",
+    "custom/launch_browser",
+    "custom/launch_file_manager"
+  ]
+}
