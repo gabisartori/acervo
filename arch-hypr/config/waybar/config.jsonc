@@ -97,8 +97,7 @@
     "format": "💻",
     "format-alt-click": "click-right",
     "format-alt": "💻{}% ",
-    "tooltip": true,
-    "tooltip-format": "💻 {}%",
+    "tooltip-format": "{}%",
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
   },
   "custom/gpu_temperature": {

@@ -66,6 +66,15 @@ tooltip label{
     background: rgba(135, 145, 238, 0.5);
 }
 
+#custom-weather {
+    background: rgba(97, 52, 135, 0.1);
+    transition: background-color 0.2s;
+    border-radius: 16px;
+    padding: 0 8px;
+}
+
+#custom-weather:hover { background: rgba(63, 34, 88, 0.2); }
+
 /* Background hover effect */
 #language,
 #pulseaudio,
@@ -109,6 +118,14 @@ tooltip label{
 
 /* Precise handling of element padding since most icons' widths aren't consistent with monospaced fonts */
 
+#custom-weather,
+#custom-wofi,
+#custom-launch_terminal,
+#custom-launch_browser,
+#custom-launch_file_manager {
+    font-size: 19px;
+}
+
 /* Top left */
 #custom-power_btn { padding-left: 8px; padding-right: 8px; }
 #custom-lock_screen { padding-left: 8px; padding-right: 10px; }
@@ -121,8 +138,8 @@ tooltip label{
 
 /* Bottom left */
 #custom-wofi { padding-left: 8px; padding-right: 10px; }
-#custom-launch_terminal { padding-left: 8px; padding-right: 18px;}
-#custom-launch_browser { padding-left: 8px; padding-right: 16px;}
+#custom-launch_terminal { padding-left: 8px; padding-right: 17px;}
+#custom-launch_browser { padding-left: 8px; padding-right: 15px;}
 #custom-launch_file_manager { padding-left: 8px; padding-right: 14px;}
 
 

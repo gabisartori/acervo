@@ -20,7 +20,7 @@
         "cpu",
         "temperature",
         "custom/gpu",
-        "custom/gpu-temperature",
+        "custom/gpu_temperature",
         "pulseaudio",
         "pulseaudio#microphone",
         "tray",
@@ -86,20 +86,21 @@
     },
     "cpu": {
         "interval": 10,
-        "format": " {usage}% ",
+        "format": " ",
         "max-length": 10,
         "format-alt-click": "click-right",
-        "format-alt": " ",
+        "format-alt": " {usage}% ",
         "on-click": "alacritty -e 'btop'"
     },
     "custom/gpu": {
       "interval": 10,
-      "format": "💻{}% ",
+      "format": "💻",
       "format-alt-click": "click-right",
-      "format-alt": "💻",
+      "format-alt": "💻{}% ",
+      "tooltip-format": "{}%",
       "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
     },
-    "custom/gpu-temperature": {
+    "custom/gpu_temperature": {
       "intervarl": 10,
       "format": "{}°C",
       "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits"
