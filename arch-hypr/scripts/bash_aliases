@@ -11,11 +11,17 @@ alias upd="sudo pacman -Syu"
 alias yt-dlp-mp3="yt-dlp -x --audio-format mp3 --embed-thumbnail -o"
 # Usage: yt-dlp-playlist <file_name>
 # file_name consists of multiple lines each being a single url to be downloaded
-alias yt-dlp-playlist="yt-dlp -x --audio-format mp3 --embed-thumbnail -a"
+alias yt-dlp-playlist="yt-dlp -x --audio-format mp3 --embed-thumbnail -o '%(uploader)s - %(title)s' -a"
 
 # Usage: Copy the qrcode into cliboard then run `otpappend <name>`
 # <name> must be an existing file in the password store vault
-alias otpappend="wl-paste | zbarimg -q --raw - | pass otp append "
+otpappend() {
+  wl-paste | zbarimg -q --raw - | pass otp append $1;
+  pass otp -c $1;
+}
+
+# alias otpappend="wl-paste | zbarimg -q --raw - | pass otp append "
+
 
 alias pacfind="pacman -Q | grep"
 
