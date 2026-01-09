@@ -24,13 +24,14 @@
     "pulseaudio",
     "pulseaudio#microphone",
     "tray",
-    "hyprland/language",
+    "custom/language",
     "custom/light_dark"
   ],
-  "hyprland/language": {
+  "custom/language": {
     "format": " {}",
-    "keyboard-name": "sino-wealth-gaming-kb-",
-    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
+    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next; pkill -SIGRTMIN+8 waybar",
+    "exec": "hyprctl devices -j | jq '.keyboards[] | select(.name==\"sino-wealth-gaming-kb-\") | .active_keymap'",
+    "signal": 8
   },
   "custom/power_btn": {
     "format": "",
@@ -96,13 +97,13 @@
     "interval": 10,
     "format": "💻",
     "format-alt-click": "click-right",
-    "format-alt": "💻{}% ",
+    "format-alt": "💻{}%",
     "tooltip-format": "{}%",
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"
   },
   "custom/gpu_temperature": {
     "intervarl": 10,
-    "format": "{}°C",
+    "format": " {}°C",
     "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits"
   },
   "temperature": {
