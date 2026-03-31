@@ -34,4 +34,3 @@ export XMODIFIERS='@im=fcitx'
 
 export EDITOR='nvim'
 
-. "$HOME/.cargo/env"
