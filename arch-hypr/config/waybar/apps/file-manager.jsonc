@@ -1,0 +1,7 @@
+{
+  "custom/launch_file_manager": {
+    "format": "",
+    "on-click": "exec thunar",
+    "tooltip": false
+  }
+}
