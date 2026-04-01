@@ -16,6 +16,8 @@ vim.opt.cursorline = true
 vim.opt.relativenumber = true
 -- Avoid linebreak in the middle of words
 vim.opt.linebreak = true
+-- Disable auto line break because I forgot I hate it
+vim.opt.wrap = false
 -- Set clipboard to be the same as the system instead of its own
 vim.opt.clipboard = "unnamedplus"
 
