@@ -26,11 +26,3 @@ if [ -f $HOME/.bash_venv ]; then
     . $HOME/.bash_venv
 fi
 
-# Ibus
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export SDL_IM_MODLUE='fcitx'
-export XMODIFIERS='@im=fcitx'
-
-export EDITOR='nvim'
-
