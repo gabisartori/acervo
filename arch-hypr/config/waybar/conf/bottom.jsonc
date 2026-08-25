@@ -22,11 +22,6 @@
             "steam_app_39210": "Final Fantasy 14"
         }
     },
-    "custom/wofi": {
-        "format": "󱗼",
-        "on-click": "wofi",
-        "tooltip": false
-    },
     "custom/weather": {
         "tooltip": true,
         "format": "{}",

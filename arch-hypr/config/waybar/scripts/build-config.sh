@@ -6,9 +6,10 @@ CONF=$WAYBAR/conf
 
 # List of favorite apps
 FAVORITES=(
+  "$APPS/app-launcher.jsonc"
+  "$APPS/terminal.jsonc"
   "$APPS/browser.jsonc"
   "$APPS/file-manager.jsonc"
-  "$APPS/terminal.jsonc"
 )
 
 CONFIG_BOTTOM=(

@@ -1,7 +1,8 @@
 {
-  "custom/launch_browser": {
+  "custom/browser": {
     "format": "",
     "on-click": "firefox",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Browser"
   }
 }

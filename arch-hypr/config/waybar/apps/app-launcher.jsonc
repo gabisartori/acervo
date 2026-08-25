@@ -1,8 +1,8 @@
 {
-  "custom/launch_wofi": {
+  "custom/wofi": {
     "format": "󱗼",
-    // "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/HyprV/wofi/config-lmenu)' & disown",
     "on-click": "wofi",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "App Launcher"
   }
 }

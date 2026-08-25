@@ -1,18 +1,27 @@
 {
-  "custom/launch_browser": {
-    "format": "",
-    "on-click": "firefox",
-    "tooltip": false
+  "custom/wofi": {
+    "format": "󱗼",
+    "on-click": "wofi",
+    "tooltip": true,
+    "tooltip-format": "App Launcher"
   },
-  "custom/launch_file_manager": {
-    "format": "",
-    "on-click": "exec thunar",
-    "tooltip": false
-  },
-  "custom/launch_terminal": {
+  "custom/terminal": {
     "format": "",
     "on-click": "exec alacritty",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Terminal"
+  },
+  "custom/browser": {
+    "format": "",
+    "on-click": "firefox",
+    "tooltip": true,
+    "tooltip-format": "Browser"
+  },
+  "custom/file_manager": {
+    "format": "",
+    "on-click": "exec thunar",
+    "tooltip": true,
+    "tooltip-format": "Files"
   },
   "layer": "top",
   "position": "bottom",
@@ -41,11 +50,6 @@
       "steam_app_39210": "Final Fantasy 14"
     }
   },
-  "custom/wofi": {
-    "format": "󱗼",
-    "on-click": "wofi",
-    "tooltip": false
-  },
   "custom/weather": {
     "tooltip": true,
     "format": "{}",
@@ -55,8 +59,8 @@
   },
   "modules-left": [
     "custom/wofi",
-    "custom/launch_terminal",
-    "custom/launch_browser",
-    "custom/launch_file_manager"
+    "custom/terminal",
+    "custom/browser",
+    "custom/file_manager"
   ]
 }

@@ -78,11 +78,11 @@ tooltip label{
 /* Background hover effect */
 #language, #custom-language,
 #pulseaudio,
-#custom-launch_browser,
+#custom-browser,
 #custom-updates,
-#custom-launch_file_manager,
+#custom-file_manager,
 #custom-wofi,
-#custom-launch_terminal {
+#custom-terminal {
     margin-left: 0px;
     transition: background-color 0.2s;
     border-radius: 4px;
@@ -99,10 +99,10 @@ tooltip label{
 #custom-updates:hover,
 #custom-power_btn:hover,
 #custom-lock_screen:hover,
-#custom-launch_browser:hover,
-#custom-launch_file_manager:hover,
+#custom-browser:hover,
+#custom-file_manager:hover,
 #custom-wofi:hover,
-#custom-launch_terminal:hover {
+#custom-terminal:hover {
     background-color: rgba(20, 20, 20, 0.5);
 }
 
@@ -120,9 +120,9 @@ tooltip label{
 
 #custom-weather,
 #custom-wofi,
-#custom-launch_terminal,
-#custom-launch_browser,
-#custom-launch_file_manager {
+#custom-terminal,
+#custom-browser,
+#custom-file_manager {
     font-size: 19px;
 }
 
@@ -138,9 +138,9 @@ tooltip label{
 
 /* Bottom left */
 #custom-wofi { padding-left: 8px; padding-right: 10px; }
-#custom-launch_terminal { padding-left: 8px; padding-right: 17px;}
-#custom-launch_browser { padding-left: 8px; padding-right: 15px;}
-#custom-launch_file_manager { padding-left: 8px; padding-right: 14px;}
+#custom-terminal { padding-left: 8px; padding-right: 17px;}
+#custom-browser { padding-left: 8px; padding-right: 15px;}
+#custom-file_manager { padding-left: 8px; padding-right: 14px;}
 
 
 /* The following blocks give the edge elements a bit of a margin */

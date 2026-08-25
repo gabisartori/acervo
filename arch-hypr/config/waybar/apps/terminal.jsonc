@@ -1,7 +1,8 @@
 {
-  "custom/launch_terminal": {
+  "custom/terminal": {
     "format": "",
     "on-click": "exec alacritty",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Terminal"
   }
 }
