@@ -156,8 +156,7 @@
   "custom/updates": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/update-sys",
-    "on-click": "~/.config/waybar/scripts/update-sys update",
-    "on-click-right": "",
+    "on-click": "",
     "interval": "once",
     "tooltip": true
   },
