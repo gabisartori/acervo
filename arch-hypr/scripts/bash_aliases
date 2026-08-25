@@ -7,7 +7,7 @@ alias la="ls -a"
 alias upd="sudo pacman -Syu"
 
 # Usage: yt-dlp-mp3 <url>
-alias yt-dlp-mp3="yt-dlp -x --audio-format mp3 --embed-thumbnail -o '%(uploader)s - %(title)s'"
+alias yt-dlp-mp3="yt-dlp -x --audio-format mp3 --embed-thumbnail -o '%(uploader)s - %(title)s' --add-metadata"
 # Usage: yt-dlp-playlist <file_name>
 # file_name consists of multiple lines each being a single url to be downloaded
 alias yt-dlp-playlist="yt-dlp -x --audio-format mp3 --embed-thumbnail -o '%(uploader)s - %(title)s' -a"

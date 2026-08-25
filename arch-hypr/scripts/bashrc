@@ -21,7 +21,7 @@ if [ -f $HOME/.bash_autocomplete ]; then
 fi
 
 
-# Programming languages environments
+# Environment Variables
 if [ -f $HOME/.bash_venv ]; then
     . $HOME/.bash_venv
 fi
