@@ -24,7 +24,7 @@
         "pulseaudio",
         "pulseaudio#microphone",
         "tray",
-        "custom/language",
+        "hyprland/language",
         "custom/light_dark"
     ],
     "custom/language": {
