@@ -1,5 +1,5 @@
-HD="$HOME/media/hdd1tb"
-PHONE="$HOME/media/phone/Armazenamento interno"
+HD="$HOME/mnt/hdd1tb"
+PHONE="$HOME/mnt/phone/Armazenamento interno"
 WHATSAPP="$PHONE/Android/media/com.whatsapp/WhatsApp/Media"
 
 # Send songs from PC to phone
