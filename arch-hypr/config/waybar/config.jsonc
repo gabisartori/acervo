@@ -115,8 +115,8 @@
   "pulseaudio": {
     "format": "{icon}",
     "format-muted": "",
-    "on-click": "~/.config/waybar/scripts/volume --toggle",
-    "on-click-right": "pavucontrol",
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/waybar/scripts/volume --toggle",
     "on-click-middle": "~/.config/waybar/scripts/switchcardprofile; playerctl play",
     "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
     "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
