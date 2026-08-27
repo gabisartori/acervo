@@ -1,3 +1,0 @@
-# Mesa 3D graphics drivers
-ppa:kisak/kisak-mesa
-ppa:aslatter/ppa
