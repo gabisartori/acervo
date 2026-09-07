@@ -9,10 +9,8 @@ hl.window_rule({ name = "loupe-float", match = { class = "^(org.gnome.Loupe)$" }
 hl.window_rule({ name = "portal-gtk-float", match = { class = "^(xdg-desktop-portal-gtk)$" }, float = true })
 hl.window_rule({ name = "file-roller-float", match = { class = "^(org.gnome.FileRoller)" }, float = true })
 hl.window_rule({ name = "viewnior-float", match = { class = "^(viewnior)$" }, float = true })
---- Float all Thunar windows except main one
-hl.window_rule({ name = "thunar-float", match = { class = "^((?i)thunar)$" }, float = true })
-hl.window_rule({ name = "thunar-main-window", match = { class = "^((?i)thunar)$", title = "^Thunar$" }, float = false })
---- Float all Steam windows except main one
+hl.window_rule({ name = "float-thunar-secondary-windows", match = { class = "^(?i)thunar$", title = "negative:^(.*) - (?i)thunar$" }, float = true })
+--- Float and center all Steam windows except main one
 hl.window_rule({ name = "steam-main-window", match = { class = "^(steam)$", title = "^(Steam)$" }, float = false })
 hl.window_rule({ name = "steam-center", match = { class = "^(steam)$", title = "^(.+)$" }, center = true })
 
