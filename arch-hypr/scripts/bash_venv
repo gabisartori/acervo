@@ -6,12 +6,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ -f $HOME/.cargo/env ]; then
   . "$HOME/.cargo/env"
 fi
-
-# Ibus
-export GTK_IM_MODULE='ibus'
-export QT_IM_MODULE='ibus'
-export SDL_IM_MODLUE='ibus'
-export XMODIFIERS='@im=ibus'
-
-# Pass
-export EDITOR='nvim'
